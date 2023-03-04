@@ -1,7 +1,17 @@
 package com.example.kotlinbasics
 
 fun main() {
-    var myName = "Denis"
-    myName = "Heidi"
+    // TODO: Add new functionality
+
+    /*
+    This
+    is a multiline
+    comment
+     */
+    val myName = "Frank"
+
+    // type int
+    var myAge = 31
+
     print("Hello " + myName)
 }
