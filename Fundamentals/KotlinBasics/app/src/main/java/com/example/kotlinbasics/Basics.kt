@@ -23,5 +23,6 @@ fun main() {
     var firstCharInStr = myStr[0]
     var lastCharInStr = myStr[myStr.length - 1]
 
-    print("Hello " + myName)
+
+    print("First character $firstCharInStr and the length of myStr is ${myStr.length}")
 }
