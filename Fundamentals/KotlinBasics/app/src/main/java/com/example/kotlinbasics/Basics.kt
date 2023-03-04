@@ -68,4 +68,16 @@ fun main() {
     // increments before use
     println("myNum is ${++myNum}")
     println("myNum is ${--myNum}")
+
+
+    // -------------------------------------------
+
+    var age = 15
+    when (age) {
+        in 21..100 -> println("now you may drink in the US")
+        in 18..20 -> println("you may vote now")
+        in 16..17 -> println("you may drive now")
+        else -> println("you're too young")
+
+    }
 }
