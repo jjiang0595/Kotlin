@@ -135,4 +135,21 @@ fun main() {
     for(i in 1 until 10 step 2) { // Same as - for(i in 1.until(10).step(2))
         print("$i ")
     }
+
+    for(i in 0 until 1000) {
+        if (i == 9001) {
+            println("IT's OVER 9000!")
+        }
+    }
+
+    var humidityLevel = 80
+    var humidity = "humid"
+    while (humidity == "humid") {
+        humidityLevel -= 5
+        println("Humidity decreased")
+        if (humidityLevel < 60) {
+            println("it's comfy now")
+            humidity = "comfy"
+        }
+    }
 }
