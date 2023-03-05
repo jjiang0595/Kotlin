@@ -171,7 +171,7 @@ fun main() {
 
 // but the same methods won't work on nullable types
     val len2 = nullableName.length // Compilation Error
-    val upper2 = nullableName.toLowerCase()  // Compilation Error
+//    val upper2 = nullableName.toLowerCase()  // Compilation Error
 
 // So how can we solve this? We could do a null check before hand
 
