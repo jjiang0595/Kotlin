@@ -34,9 +34,14 @@ class Person constructor(firstName: String = "John", lastName: String = "Doe") {
 }
 
 class MobilePhone constructor(osName: String, brand: String, model: String) {
-
+    private var battery = 30
     init {
         println("OS Name: $osName brand: $brand model: $model")
+    }
+
+    fun chargeBattery(chargedBy: Int) {
+        println("Battery was at $battery and is at ${battery + chargedBy}")
+        battery += chargedBy
     }
 }
 

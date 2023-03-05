@@ -4,7 +4,7 @@ data class User(val id: Long, var name: String)
 
 fun main() {
     val user1 = User(1, "Denis")
-    
+
     user1.name = "Michael"
     val user2 = User(1, "Michael")
 
