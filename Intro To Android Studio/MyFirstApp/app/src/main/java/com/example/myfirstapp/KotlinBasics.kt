@@ -29,7 +29,7 @@ class Person constructor(firstName: String = "John", lastName: String = "Doe") {
     }
 
     fun stateHobby() {
-        println("${this.firstName}'s hobby is $hobby")
+        println("$firstName\'s hobby is $hobby")
     }
 }
 
@@ -37,5 +37,34 @@ class MobilePhone constructor(osName: String, brand: String, model: String) {
 
     init {
         println("OS Name: $osName brand: $brand model: $model")
+    }
+}
+
+
+class Car() {
+
+    lateinit var owner : String
+
+    val myBrand: String = "BMW"
+        // Custom getter
+        get() {
+            return field.toLowerCase()
+        }
+
+
+    // default setter and getter
+    var myModel: String = "M5"
+        private set
+
+    var maxSpeed: Int = 250
+        get() = field
+        // Custom Setter
+        set(value) {
+            field = if(value > 0) value else throw IllegalArgumentException("_maxSpeed must be greater than zero")
+        }
+
+    init{
+        this.myModel = "M3"
+        this.owner = "Frank"
     }
 }
