@@ -15,7 +15,7 @@ fun main() {
     print(fruits.contentToString())
 
     for (i in fruits.indices) {
-        print("${fruits[i].name} is in index $index")
+        print("${fruits[i].name} is in index $i")
     }
 }
 
