@@ -7,5 +7,5 @@ fun main() {
     newFruits.add("Pear")
 
     val daysOfTheWeek = mapOf(1 to "Monday", 2 to "Tuesday",  3 to "Wednesday")
-    
+
 }
