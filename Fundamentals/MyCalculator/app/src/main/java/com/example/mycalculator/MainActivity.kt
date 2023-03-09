@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity() {
                     prefix = "-"
                     tvValue = tvValue.substring(1)
                 }
+
                 if (tvValue.contains("-")) {
 
                     val splitValue = tvValue.split("-")
@@ -67,16 +68,53 @@ class MainActivity : AppCompatActivity() {
                     var two = splitValue[1]
                     // var result = one.toDouble() - two.toDouble()
 
-                    if(prefix.isNotEmpty()) {
+                    if (prefix.isNotEmpty()) {
+                        one = prefix + one
+                    }
+                    tvInput?.text = removeZeroAfterDot((one.toDouble() + two.toDouble()).toString())
+                }
+                else if (tvValue.contains("+")) {
+                    val splitValue = tvValue.split("+")
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+
+                    if (prefix.isNotEmpty()) {
+                        one = prefix + one
+                    }
+                    tvInput?.text = removeZeroAfterDot((one.toDouble() - two.toDouble()).toString())
+                }
+                else if (tvValue.contains("*")) {
+                    val splitValue = tvValue.split("*")
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+
+                    if (prefix.isNotEmpty()) {
+                        one = prefix + one
+                    }
+                    tvInput?.text = removeZeroAfterDot((one.toDouble() * two.toDouble()).toString())
+                }
+                else if (tvValue.contains("/")) {
+                    val splitValue = tvValue.split("/")
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+
+                    if (prefix.isNotEmpty()) {
                         one = prefix + one
                     }
 
-                    tvInput?.text = (one.toDouble() - two.toDouble()).toString()
+                    tvInput?.text = removeZeroAfterDot((one.toDouble() / two.toDouble()).toString())
                 }
             } catch (e: java.lang.ArithmeticException) {
                 e.printStackTrace()
             }
         }
+    }
+
+    private fun removeZeroAfterDot(result: String) : String {
+        var value = result
+        if (result.endsWith(".0"))
+            value = result.substring(0, result.length - 2)
+        return value
     }
 
     private fun isOperatorAdded(value: String): Boolean {
