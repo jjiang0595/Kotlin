@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onDecimalPoint(view: View) {
-        if(lastNumeric && !lastDot) {
+        if (lastNumeric && !lastDot) {
             tvInput?.append(".")
             lastNumeric = false
             lastDot = true
@@ -48,11 +48,39 @@ class MainActivity : AppCompatActivity() {
                 lastDot = false
             }
         }
-
     }
 
-    private fun isOperatorAdded(value: String) : Boolean {
-        return if(value.startsWith("-")) {
+    fun onEqual(view: View) {
+        if (lastNumeric) {
+            var tvValue = tvInput?.text.toString()
+            var prefix = ""
+
+            try {
+                if (tvValue.startsWith("-")) {
+                    prefix = "-"
+                    tvValue = tvValue.substring(1)
+                }
+                if (tvValue.contains("-")) {
+
+                    val splitValue = tvValue.split("-")
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+                    // var result = one.toDouble() - two.toDouble()
+
+                    if(prefix.isNotEmpty()) {
+                        one = prefix + one
+                    }
+
+                    tvInput?.text = (one.toDouble() - two.toDouble()).toString()
+                }
+            } catch (e: java.lang.ArithmeticException) {
+                e.printStackTrace()
+            }
+        }
+    }
+
+    private fun isOperatorAdded(value: String): Boolean {
+        return if (value.startsWith("-")) {
             false
         } else {
             value.contains("/")
