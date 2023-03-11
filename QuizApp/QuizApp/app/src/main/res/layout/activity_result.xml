@@ -27,7 +27,7 @@
         android:layout_width="341dp"
         android:layout_height="300dp"
         android:contentDescription="image"
-        tools:src="@drawable/ic_trophy" />
+        android:src="@drawable/ic_trophy" />
 
     <TextView
         android:id="@+id/tv_congratulations"
